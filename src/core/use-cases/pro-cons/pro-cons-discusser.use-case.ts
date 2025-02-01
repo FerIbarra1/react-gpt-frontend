@@ -1,4 +1,4 @@
-import type { ProConsDiscusserResponse } from '../../interfaces';
+import { ProConsDiscusserResponse } from "../../../interfaces";
 
 export const proConsDiscusserUseCase = async (prompt: string) => {
   try {
