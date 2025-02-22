@@ -8,3 +8,4 @@ export * from './pros-cons-stream/ProsConsStreamPage';
 export * from './pros-cons/ProsConsPage';
 export * from './orthography/OrthographyPage';
 export * from './image-to-text/ImageToTextPage';
+export * from './home/HomePage';

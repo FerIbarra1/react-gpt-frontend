@@ -2,7 +2,6 @@ import { Outlet } from 'react-router-dom';
 import { menuRoutes } from '../router/router';
 import { SideBarMenuItem } from '../components';
 import { useEffect, useState } from 'react';
-import { ModalSignUp } from '../components/modal/ModalSignUp';
 
 export const DashboardLayout = () => {
   const [theme, setTheme] = useState(() => {
@@ -11,11 +10,10 @@ export const DashboardLayout = () => {
     }
     return 'auto';
   });
-  const [show, setShow] = useState(true);
 
   useEffect(() => {
     const html = document.documentElement;
-  
+
     if (theme === 'dark') {
       html.classList.add('dark');
       html.classList.remove('light');
@@ -42,13 +40,14 @@ export const DashboardLayout = () => {
   }, [theme]);
 
   return (
-    <main className="flex flex-row pt-7 dark:bg-black bg-[#f1f1f1]">
-      <ModalSignUp show={show} setShow={setShow} />
+    <main className="flex flex-row py-7 dark:bg-black bg-[#f1f1f1] h-screen fade-in-slow">
       <nav className="hidden sm:flex flex-col ml-5 w-[370px] min-h-[calc(100vh-3.0rem)] bg-white dark:bg-[#2f2f2f] p-5 rounded-3xl">
         <div className="flex flex-col">
-          <h1 className="font-bold text-lg lg:text-3xl bg-gradient-to-br text-[#202020] dark:text-white text-center">
-            ReactGPT<span className="text-[#EC0932]">.</span>
-          </h1>
+          <div className='flex justify-center'>
+            <h1 className="text-4xl font-extrabold bg-[#EC0932] text-white text-center rounded px-2">
+              GPT
+            </h1>
+          </div>
           {theme !== 'dark' ? (
             <button
               type="button"
